@@ -17,6 +17,15 @@ function isUri($value){
 
 }
 
+function abort($code=404)
+    {
+        http_response_code($code);
+
+        require basePath("views/$code.php");
+        die();
+    }
+
+
 function authenticated($condition, $status = Respond::FORBIDDEN) {
      if($condition){
         abort($status);
