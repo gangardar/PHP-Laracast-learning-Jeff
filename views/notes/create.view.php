@@ -5,7 +5,7 @@ require basePath('views/partials/nav.php') ?>
 
     <main>
         <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-            <form method="post">
+            <form method="post" action="/notes">
                 <div class="space-y-12">
                     <h2 class="text-base font-semibold leading-7 text-gray-900">Add a New Note</h2>
 

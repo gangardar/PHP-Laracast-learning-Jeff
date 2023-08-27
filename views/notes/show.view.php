@@ -11,9 +11,11 @@ require basePath('views/partials/nav.php') ?>
             <p><?= htmlspecialchars($note['body']); ?></p>
             <form class="mt-5" method="post">
                 <input type="hidden" name="_method" value="DELETE">
-                <input type="hidden" name="id" value="<?php $note['id']?>">
+                <input type="hidden" name="id" value="<?php echo $note['id']?>">
                 <button class="text-red-500 text-sm" type="submit" >Delete</button>
             </form>
+
+            <!-- <?php dd($note['id']) ?> -->
         </div>
     </main>
 
