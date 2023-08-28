@@ -15,6 +15,10 @@ require basePath('views/partials/nav.php') ?>
                 <button class="text-red-500 text-sm" type="submit" >Delete</button>
             </form>
 
+            <button class="mt-4 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                <a href="/note/edit?id=<?= $note['id'] ?>">Edit</a>
+            </button>
+
             <!-- <?php dd($note['id']) ?> -->
         </div>
     </main>

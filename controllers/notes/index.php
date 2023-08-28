@@ -2,11 +2,11 @@
 <?php
 
     use Core\Database;
+    use Core\App;
 
     $heading = 'Notes';
 
-    $config = require basePath('config.php');
-    $db = new Database($config['Database']);
+    $db =App::resolve(Database::class);
 
     $id = 9;
 
