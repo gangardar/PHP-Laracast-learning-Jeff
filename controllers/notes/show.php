@@ -6,7 +6,7 @@ use Core\App;
 
 $db =App::resolve(Database::class);
 
-$currentUser = 9;
+$currentUser = 1;
 
 $id = $_GET['id'];
 

@@ -6,7 +6,7 @@ use Core\Validator;
 
 $db =App::resolve(Database::class);
 
-$currentUser = 9;
+$currentUser = 1;
 
 $error = [];
 

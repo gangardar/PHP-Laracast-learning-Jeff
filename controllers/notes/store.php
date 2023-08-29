@@ -23,7 +23,7 @@ $error = [];
 
     $result = $db->query("Insert Into notes(body, user_id) VALUES (:body, :user_id)",[
         'body' => $_POST['body'],
-        'user_id' => 9,
+        'user_id' => 1,
     ]);
 
     header('location: /notes');
