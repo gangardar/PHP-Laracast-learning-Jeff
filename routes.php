@@ -29,4 +29,10 @@ $router->get('/contact', 'controllers/contact.php');
 $router->get('/register' , 'controllers/authentication/create.php')->only('guest');
 $router->post('/register' , 'controllers/authentication/store.php');
 
+$router->get('/login' , 'controllers/session/login.php')->only('guest');
+$router->post('/login' , 'controllers/session/store.php')->only('guest');
+
+$router->delete('/session', 'controllers/session/destroy.php')->only('auth');
+
+
 
