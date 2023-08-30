@@ -1,6 +1,7 @@
 <?php
 
 use Core\Session;
+use Core\ValidationExpection;
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -28,6 +29,15 @@ $routes = require basePath('routes.php');
 
 $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 
-$router->route($uri, $method);
+try{
+    $router->route($uri, $method);
+} catch(ValidationExpection $expection){
+    Session::flash('error', $expection->error);
+    Session::flash('old', $expection->old);
+
+    return $router->back();
+}
+
+
 
 Session::unflash();

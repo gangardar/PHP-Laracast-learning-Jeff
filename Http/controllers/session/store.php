@@ -2,30 +2,22 @@
 
 
 use Core\Authenticator;
-use Core\Session;
+
 use Http\Forms\LoginForm;
 
-$email = $_POST['email'];
-$password = $_POST['password'];
 
 
-$loginForm = new LoginForm;
+$loginForm = LoginForm::validate($attribute = [
+    'email' => $_POST['email'],
+    'password' => $_POST['password']
+]);
 
-if ($loginForm->validate($email, $password)) {
-    $auth = new Authenticator();
+$auth = new Authenticator();
 
-    if ($auth->attempt($email, $password)) {
-        redirect('/');
-    } 
-    
-    $loginForm->setError('email','No matching address found this user');
-    
+$signedIn = $auth->attempt($attribute['email'], $attribute['password']);
+
+if (!$signedIn) {
+    $loginForm->setError('email', 'No matching address found this user')->throw();
 }
 
-
-Session::flash('error', $loginForm->getError());
-
-return redirect('/login');
-
-
-
+redirect('/');
