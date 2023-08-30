@@ -1,7 +1,6 @@
 <?php
 require basePath('views/partials/head.php');
 require basePath('views/partials/nav.php') ?>
-<?php require basePath('views/partials/banner.php');?>
 
 <main>
 

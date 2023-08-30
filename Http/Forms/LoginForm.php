@@ -21,14 +21,17 @@ class LoginForm
 
         return empty($this->error);
     }
-
-    public function getError(){
-        return $this->error;
-    }
-
+    
     public function setError($key, $value){
         $this->error[$key]= $value;
     }
+
+    public function getError(){
+        return $this->error;
+        
+    }
+
+    
 
 
 }
